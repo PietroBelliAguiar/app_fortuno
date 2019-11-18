@@ -2,6 +2,7 @@ package br.com.sempreit_fortuno.steps;
 
 import static br.com.smiles.base.DefaultBaseController.getPage_;
 
+import br.com.sempreit_fortuno.pages.CartoesDeCreditoActivity;
 import br.com.sempreit_fortuno.pages.HomeActivity;
 import br.com.sempreit_fortuno.pages.IntroducaoActivity;
 import cucumber.api.java.pt.Dado;
@@ -12,11 +13,16 @@ public class CartoesDeCreditoStep {
 	
 	HomeActivity home = getPage_(HomeActivity.class);
 	IntroducaoActivity intro = getPage_(IntroducaoActivity.class);
+	CartoesDeCreditoActivity cartoes = getPage_(CartoesDeCreditoActivity.class);
 	
 	//Contexto
 	@Dado("que o usuário acesse a tela de Cartões de Crédito")
 	public void queOUsuarioAcesseATelaDeCartoesDeCredito() throws Exception{
-	    // Write code here that turns the phrase above into concrete actions
+		intro.telaDePrimeiroAcesso();
+	    home.validarHome();
+	    home.acessarMenuPrincipal();
+	    home.acessarCartoesDeCredito();
+	    cartoes.validaTelaDeCartoesDeCredito();
 	    
 	}
 

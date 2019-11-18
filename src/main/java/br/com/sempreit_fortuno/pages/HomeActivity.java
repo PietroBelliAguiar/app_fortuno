@@ -31,6 +31,7 @@ public class HomeActivity extends PageBase {
 			saldoSeguro = getElementById("com.impprove.app:id/tvLabelSafeBalance"),
 			avaliacaoPremium = getElementById("com.impprove.app:id/tvSubscribedPlan"),
 			validarTelaPremium = getElementByXPath("//android.widget.TextView[@text='ESCOLHA O PLANO IDEAL PARA VOCÊ']"),
+			menu = getElementByXPath("(//android.widget.ImageButton)[1]"),
 			menuVisaoGeral = getElementByXPath("//android.widget.CheckedTextView[@text='Visão geral']"),
 			menuContas = getElementByXPath("//android.widget.CheckedTextView[@text='Contas']"),
 			menuCartoesDeCredito = getElementByXPath("//android.widget.CheckedTextView[@text='Cartões de crédito']"),
@@ -92,6 +93,14 @@ public class HomeActivity extends PageBase {
 		logger.debug("início de Avalição Premium");
 		avaliacaoPremium.click();
 		logger.debug("fim de Avaliação Premium");
+	}
+	
+	public void acessarMenuPrincipal() throws Exception {
+		menu.click();
+	}
+	
+	public void acessarCartoesDeCredito() throws Exception {
+		menuCartoesDeCredito.click(); 
 	}
 
 }
