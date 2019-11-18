@@ -1,0 +1,25 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gol="http://siebel.com/CustomUI/GOLGetAllTransactions">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gol:GetAllTransactions_Input>
+            <gol:TransactionStatus></gol:TransactionStatus>
+            <gol:OrderId></gol:OrderId>
+            <gol:OperatingCarrier></gol:OperatingCarrier>
+            <gol:TransactionDateEnd></gol:TransactionDateEnd>
+            <gol:ItemId></gol:ItemId>
+            <gol:IncludeFinanceTxn></gol:IncludeFinanceTxn>
+            <gol:TransactionSubType></gol:TransactionSubType>
+            <gol:PartnerName></gol:PartnerName>
+            <gol:NoShowFlag></gol:NoShowFlag>
+            <gol:MemberNumber></gol:MemberNumber>
+            <gol:TransactionDateStart></gol:TransactionDateStart>
+            <gol:TransactionSubStatus></gol:TransactionSubStatus>
+            <gol:LanguageCode></gol:LanguageCode>
+            <gol:TransactionType></gol:TransactionType>
+            <gol:StartDate></gol:StartDate>
+            <gol:ProductName></gol:ProductName>
+            <gol:PNR></gol:PNR>
+            <gol:TransactionId></gol:TransactionId>
+        </gol:GetAllTransactions_Input>
+    </soapenv:Body>
+</soapenv:Envelope>
