@@ -1,1 +1,12 @@
+<<<<<<< HEAD
+=======
+.project
+/bin/
+
+.classpath
+.project
+.settings
+.properties
+config.properties
+>>>>>>> branch 'master' of https://github.com/PietroBelliAguiar/app_fortuno.git
 /target/
