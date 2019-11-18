@@ -1,6 +1,7 @@
 package br.com.sempreit_fortuno.steps;
 
 import static br.com.smiles.base.DefaultBaseController.getPage_;
+import static br.com.smiles.helpers.DataTableHelper.getDt_;
 
 import br.com.sempreit_fortuno.pages.EditarContaActivity;
 import br.com.sempreit_fortuno.pages.HomeActivity;
@@ -21,15 +22,13 @@ public class EditarContasStep {
 	}
 
 	@E("que o usuário edite a carteira")
-	public void queOUsuárioEditeACarteira()throws Exception {
-	    // Write code here that turns the phrase above into concrete actions
-	    
+	public void queOUsuarioEditeACarteira()throws Exception {
+		editaractivity.EditarCarteira();
 	}
 
 	@E("que o usuário adicione os dados requisitados na tela")
 	public void queOUsuárioAdicioneOsDadosRequisitadosNaTela()throws Exception {
-	    // Write code here that turns the phrase above into concrete actions
-	    
+		editaractivity.saldoDaConta(getDt_().getStringOf("in_Saldo_Da_Conta"));
 	}
 
 	@Então("devera validar os dados inseridos")
