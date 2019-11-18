@@ -3,6 +3,7 @@ package br.com.sempreit_fortuno.pages;
 import static br.com.smiles.base.DefaultBaseController.getPage_;
 import static br.com.smiles.helpers.QueryHelper.getElementById;
 import static br.com.smiles.helpers.QueryHelper.getElementByXPath;
+import static br.com.smiles.helpers.QueryHelper.getElementByClassName;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Assert;
@@ -30,46 +31,52 @@ public class HomeActivity extends PageBase {
 			SaldoSeguro = getElementById("com.impprove.app:id/tvLabelSafeBalance"),
 			AvaliacaoPremium = getElementById("com.impprove.app:id/tvSubscribedPlan"),
 			validarTelaPremium = getElementByXPath(
-					"//android.widget.TextView[@text='ESCOLHA O PLANO IDEAL PARA VOCÊ']");
+					"//android.widget.TextView[@text='ESCOLHA O PLANO IDEAL PARA VOCÊ']");;
 
 	public void validarHome() throws Exception {
 		Assert.assertTrue(elementIsVisible(TextoNomeHome));
 		logger.info("Home validada com sucesso!");
 		logger.takeScreenShot("Home", this);//
 	}
+
+
 	public void acessarSaldoDeContas() throws Exception {
 		logger.info(" início de Saldo de contas ");
 		SaldoDeContas.click();
 		logger.info("fim de Saldo de contas");
 	}
-	public void acessarGastosDeHoje()throws Exception{
+
+	public void acessarGastosDeHoje() throws Exception {
 		logger.info("início de Gastos de hoje");
 		GastosDeHoje.click();
 		logger.info("fim de Gastos de hoje");
 	}
-	
-	
-	public void acessarReceitas() throws Exception{
+
+	public void acessarReceitas() throws Exception {
 		logger.debug("início de Receitas");
 		Receitas.click();
-		logger.debug("fim de Receitas");	
+		logger.debug("fim de Receitas");
 	}
-	public void acessarDespesas()throws Exception{
+
+	public void acessarDespesas() throws Exception {
 		logger.debug("início de Despesas");
 		Despesas.click();
 		logger.debug("fim de Despesas");
 	}
+
 	public void acessarDespesasNoCredito() throws Exception {
 		logger.debug("início de Despesas no crédito");
 		DespesasNoCredito.click();
 		logger.debug("fim de Despesas no crédito");
 	}
-	public void acessarReceitasPendentes() throws Exception{
+
+	public void acessarReceitasPendentes() throws Exception {
 		logger.debug("início de Receitas pendentes");
 		ReceitasPendentes.click();
 		logger.debug("fim de Receitas pendentes");
 	}
-	public void acessarAvaliacaoPremium()throws Exception{
+
+	public void acessarAvaliacaoPremium() throws Exception {
 		logger.debug("início de Avalição Premium");
 		AvaliacaoPremium.click();
 		logger.debug("fim de Avaliação Premium");
