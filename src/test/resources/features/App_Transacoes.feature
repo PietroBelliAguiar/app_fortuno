@@ -6,7 +6,7 @@
 	para realizar novas transações 
 	
 	Contexto: Abrir Transações
-	Dado que o usuário abra o menu Transações 
+	Dado que o usuário abra o menu Transações
 	
 	#REG-401-ABRIR NOVA TRANSFERÊNCIA
 	@REG-401 @android

@@ -17,23 +17,24 @@ public class TransacoesStep {
 	UtilsMobile utils = getPage_(UtilsMobile.class);
 	
 	
-	//REG-401
 	
-
+	@Dado("que o usuário abra o menu Transações")
 	public void queOUsuárioAbraOMenuTransações() throws Exception {
 		home.acessarMenuLateral();
 		home.acessarMenuTransacoes();
 		home.abrirMenuFlutuante();
 	}
-
+	
+	//REG-401
+	
 	@E("que o usuário abra a tela de nova transferência")
-	public void queOUsuárioAbraATelaDeNovaTransferência()throws Exception {
+	public void queOUsuarioAbraATelaDeNovaTransferencia()throws Exception {
 		transacoes.abrirMenuDeNovaTranferência();
 	}
 
 	@E("coloque o valor necessário")
-	public void coloqueOValorNecessário()throws Exception {
-		utils.inserirValorCalculadoraFortuno(getDt_().getStringOf("in_Valor_Calculadora1"));
+	public void coloqueOValorNecessario()throws Exception {
+		utils.inserirValorCalculadoraFortuno(getDt_().getStringOf("in_Valor_Calculadora_Transferencia"));
 	}
 
 	@E("transfira o valor para outra carteira")
@@ -43,7 +44,7 @@ public class TransacoesStep {
 	}
 
 	@Então("devera validar a transferência")
-	public void deveraValidarATransferência()throws Exception {
+	public void deveraValidarATransferencia()throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
 	
 	}
@@ -51,13 +52,13 @@ public class TransacoesStep {
 	//REG-402
 	
 	@Dado("que o usuário abra a tela de nova receita")
-	public void queOUsuárioAbraATelaDeNovaReceita()throws Exception {
+	public void queOUsuarioAbraATelaDeNovaReceita()throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
 	  
 	}
 
 	@E("coloque as informações necessárias para a receita")
-	public void coloqueAsInformaçõesNecessárias()throws Exception {
+	public void coloqueAsInformacoesNecessarias()throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
 	  
 	}
@@ -71,12 +72,12 @@ public class TransacoesStep {
 	//REG-403
 	
 	@Dado("que o usuário abra a tela de nova despesa")
-	public void queOUsuárioAbraATelaDeNovaDespesa() throws Exception{
+	public void queOUsuarioAbraATelaDeNovaDespesa() throws Exception{
 	    // Write code here that turns the phrase above into concrete actions
 	 
 	}
 	@E("coloque as informações necessárias para a despesa")
-	public void coloqueAsInformaçõesNecessáriasParaADespesa()throws Exception {
+	public void coloqueAsInformacoesNecessariasParaADespesa()throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
 	  
 	}
