@@ -21,7 +21,7 @@ public class IntroducaoActivity extends PageBase {
 			btnComecarAgora = getElementByClassName("android.widget.Button"),
 			btnContinuarCom = getElementById("com.impprove.app:id/llButtons"),
 			btnContinuarComGoogle = getElementByXPath(
-					"//android.widget.Button[contains(@text,'CONTINUAR COM GOOGLE')]"),
+			"//android.widget.Button[contains(@text,'CONTINUAR COM GOOGLE')]"),
 			containerContaGoogle = getElementByXPath(
 					"(//android.widget.LinearLayout[@resource-id='com.google.android.gms:id/container'])[1]");
 

@@ -37,14 +37,14 @@ public class HomeActivity extends PageBase {
 			menuCartoesDeCredito = getElementByXPath("//android.widget.CheckedTextView[@text='Cartões de crédito']"),
 			menuTransacoes = getElementByXPath("//android.widget.CheckedTextView[@text='Transações']"),
 			menuOrcamentos = getElementByXPath("//android.widget.CheckedTextView[@text='Orçamentos']"),
-			mennuGraficos = getElementByXPath("//android.widget.CheckedTextView[@text='Gráficos']"),
+			menuGraficos = getElementByXPath("//android.widget.CheckedTextView[@text='Gráficos']"),
 			menuResumoDiario = getElementByXPath("//android.widget.CheckedTextView[@text='Resumo diário']"),
 			menuBalancoMensal = getElementByXPath("//android.widget.CheckedTextView[@text='Balanço mensal']"),
 			menuTotalGeral = getElementByXPath("//android.widget.CheckedTextView[@text='Total geral']"),
 			menuPerfilAjustes = getElementByXPath("//android.widget.CheckedTextView[@text='Perfil & Ajustes']"),
 			menuCategorias = getElementByXPath("//android.widget.CheckedTextView[@text='Categorias']"),
-			menuCorDoTema = getElementByXPath("//android.widget.CheckedTextView[@text='Cor do tema']");
-			
+			menuCorDoTema = getElementByXPath("//android.widget.CheckedTextView[@text='Cor do tema']"),
+			menuFlutuante = getElementByXPath("//android.widget.ImageButton//..//android.widget.ImageView");
 
 	public void validarHome() throws Exception {
 		Assert.assertTrue(elementIsVisible(textoNomeHome));
@@ -101,6 +101,22 @@ public class HomeActivity extends PageBase {
 	
 	public void acessarCartoesDeCredito() throws Exception {
 		menuCartoesDeCredito.click(); 
+	}
+	public void acessarMenuTransacoes()throws Exception {
+		logger.debug("início de acessar menu transações");
+		menuTransacoes.click();
+		logger.debug("fim de acessar menu de transações");
+	}
+	public void acessarMenuLateral()throws Exception {
+		logger.debug("início de acessar menu lateral ");
+		menu.click();
+		logger.debug("fim de acessar menu lateral");
+	}
+	public void abrirMenuFlutuante() throws Exception{
+		logger.debug("início de abrir menu Flutuante");
+		menuFlutuante.click();
+		logger.debug("fim de abrir menu Flutuante");
+		
 	}
 
 }
