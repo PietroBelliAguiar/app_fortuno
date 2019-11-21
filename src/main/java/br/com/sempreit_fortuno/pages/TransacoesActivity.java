@@ -42,17 +42,4 @@ public class TransacoesActivity extends PageBase {
 		abrirMenuDeNovaDespesaNoCredito.click();
 		logger.debug("fim de abrir menu Nova Despesa No Crédito");
 	}
-	public void calcularResultadoCalculadora()throws Exception{
-		logger.debug("início de cálculo de Nova Despesa No Crédito");
-		for(int i=0;i<2;i++) {
-			btnNumero8.click();
-		}
-		btnMultiplicacao.click();
-		btnNumero6.click();
-		btnIgual.click();
-		
-		btnvalidarCalculo.click();
-		logger.debug("fim de cálculo de Nova Despesa No Crédito");
-	}
-
 }

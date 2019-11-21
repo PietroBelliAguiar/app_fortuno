@@ -1,21 +1,25 @@
 package br.com.sempreit_fortuno.steps;
 
+import static br.com.smiles.helpers.DataTableHelper.getDt_;
+import static br.com.smiles.base.DefaultBaseController.getPage_;
+
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.pt.E;
 import cucumber.api.java.pt.Então;
 import br.com.sempreit_fortuno.pages.HomeActivity;
 import br.com.sempreit_fortuno.pages.TransacoesActivity;
+import br.com.sempreit_fortuno.utils.UtilsMobile;
 
-import static br.com.smiles.base.DefaultBaseController.getPage_;
 
 public class TransacoesStep {
 	TransacoesActivity transacoes = getPage_(TransacoesActivity.class);
 	HomeActivity home = getPage_(HomeActivity.class);
+	UtilsMobile utils = getPage_(UtilsMobile.class);
 	
 	
 	//REG-401
 	
-	@Dado("que o usuário abra o menu Transações")
+
 	public void queOUsuárioAbraOMenuTransações() throws Exception {
 		home.acessarMenuLateral();
 		home.acessarMenuTransacoes();
@@ -29,7 +33,7 @@ public class TransacoesStep {
 
 	@E("coloque o valor necessário")
 	public void coloqueOValorNecessário()throws Exception {
-		transacoes.calcularResultadoCalculadora();
+		utils.inserirValorCalculadoraFortuno(getDt_().getStringOf("in_Valor_Calculadora1"));
 	}
 
 	@E("transfira o valor para outra carteira")

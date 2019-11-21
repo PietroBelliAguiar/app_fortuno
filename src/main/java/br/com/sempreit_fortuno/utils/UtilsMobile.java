@@ -20,6 +20,7 @@ import java.util.regex.Pattern;
 
 import org.codehaus.jettison.json.JSONException;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebElement;
 
 import com.google.api.client.util.Strings;
 
@@ -591,5 +592,21 @@ public class UtilsMobile extends PageBase {
 		Random r = new Random();
 		int randomNumber = r.nextInt(genero.length);
 		return genero[randomNumber];
+	}
+	
+	public void inserirValorCalculadoraFortuno(String valorASerInserido)throws Exception{
+		logger.debug("inicio inserção de dados na calculadora");
+		
+		for(int cont = 0; cont < valorASerInserido.length(); cont++) {
+			char algarismo = valorASerInserido.charAt(cont);
+		
+			String idNumGenerico = "com.impprove.app:id/bt" + algarismo;
+			
+			@SuppressWarnings("rawtypes")
+			VirtualElement numeroDigitado = getElementById(idNumGenerico);
+			
+			numeroDigitado.click();
+		}
+		logger.debug("fim inserção de dados na calculadora");
 	}
 }

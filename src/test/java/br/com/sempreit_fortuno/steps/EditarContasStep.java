@@ -35,10 +35,4 @@ public class EditarContasStep {
 	public void deveraValidarOsDadosInseridos() throws Exception{
 	    // Write code here that turns the phrase above into concrete actions
 	}
-
-	@E("que o usuário edite a carteira")
-	public void queOUsuárioEditeACarteira() throws Exception {
-		// Write code here that turns the phrase above into concrete actions
-
-	}
 }
