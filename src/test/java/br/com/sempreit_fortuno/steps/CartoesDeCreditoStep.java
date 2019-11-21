@@ -8,6 +8,7 @@ import br.com.sempreit_fortuno.pages.IntroducaoActivity;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.E;
 import cucumber.api.java.pt.Então;
+import static br.com.smiles.helpers.DataTableHelper.getDt_;
 
 public class CartoesDeCreditoStep {
 	
@@ -18,7 +19,7 @@ public class CartoesDeCreditoStep {
 	//Contexto
 	@Dado("que o usuário acesse a tela de Cartões de Crédito")
 	public void queOUsuarioAcesseATelaDeCartoesDeCredito() throws Exception{
-		intro.telaDePrimeiroAcesso();
+//		intro.telaDePrimeiroAcesso();
 	    home.validarHome();
 	    home.acessarMenuPrincipal();
 	    home.acessarCartoesDeCredito();
@@ -29,12 +30,16 @@ public class CartoesDeCreditoStep {
 	//REG-201 - ADICIONAR CARTÃO DE CRÉDITO
 	@Dado("que o usuário adicione um novo cartão")
 	public void queOUsuarioAdicioneUmNovoCartao() throws Exception {
+		cartoes.adicionaCartaoDeCredito(getDt_().getStringOf("in_Nome_Cartao"), 
+										getDt_().getStringOf("in_Bandeira_Cartao"), 
+										getDt_().getStringOf("in_Dia_Fechamento"), 
+										getDt_().getStringOf("in_Dia_Vencimento"));		
 		
 	}
 
 	@Então("devera validar o cartão cadastrado")
 	public void deveraValidarOCartaoCadastrado() throws Exception{
-	    
+	    cartoes.validaAdicionarCartaoDeCredito(getDt_().getStringOf("in_Nome_Cartao"));
 	}
 
 	//REG-202
