@@ -27,11 +27,11 @@ public class GastosDeHojeActivity extends PageBase {
 	btnCalendario = getElementById("com.impprove.app:id/tvMonthYear"),
 	btnAnoCalendario = getElementById("android:id/date_picker_header_year"),
 	acharAnoCalendario = getElementByXPath("android:id/text1"),
-	clicarNoAno = getElementByXPath("//android.widget.TextView[@text='2100']"),
-	diaCalendario = getElementByXPath("//android.view.View[@content-desc='28 agosto 2100']"),
+	clicarNoAno = getElementByXPath("//android.widget.TextView[@text='2090']"),
+	diaCalendario = getElementByXPath("//android.view.View[@content-desc='28 fevereiro 2090']"),
 	btnMesPassado = getElementByXPath("//android.widget.ImageButton[@content-desc='Mês passado']"),
 	btnFecharCalendario = getElementById("android:id/button1"),
-	verificarData = getElementById("//android.widget.TextView[contains(@text,'28 ago 2100')]");
+	verificarData = getElementById("//android.widget.TextView[contains(@text,'28 fev 2090')]");
 	
 	
 	public void acessarGastosDeHoje()throws Exception{
@@ -47,8 +47,10 @@ public class GastosDeHojeActivity extends PageBase {
 	
 	public void selecionarDataNascimento() throws Exception{
 		logger.debug("Início de selecionar Data Nascimento");
-		btnAnoCalendario.click();
-		utils.swipeToElement(acharAnoCalendario, Direction.DOWN, 10);
+		btnAnoCalendario.click();	
+		while(!elementIsVisible(clicarNoAno)) {
+			utils.swipe(Direction.DOWN);
+		}
 		clicarNoAno.click();
 		
 		//selecionar mes e dia inicio
