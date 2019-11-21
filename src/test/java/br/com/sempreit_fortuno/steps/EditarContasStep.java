@@ -27,7 +27,7 @@ public class EditarContasStep {
 	}
 
 	@E("que o usuário adicione os dados requisitados na tela")
-	public void queOUsuárioAdicioneOsDadosRequisitadosNaTela()throws Exception {
+	public void queOUsuarioAdicioneOsDadosRequisitadosNaTela()throws Exception {
 		editaractivity.saldoDaConta(getDt_().getStringOf("in_Saldo_Da_Conta"));
 	}
 
@@ -35,5 +35,10 @@ public class EditarContasStep {
 	public void deveraValidarOsDadosInseridos() throws Exception{
 	    // Write code here that turns the phrase above into concrete actions
 	}
-	
+
+	@E("que o usuário edite a carteira")
+	public void queOUsuárioEditeACarteira() throws Exception {
+		// Write code here that turns the phrase above into concrete actions
+
+	}
 }
