@@ -20,8 +20,8 @@ public class TransacoesActivity extends PageBase {
 	btnNumero8 = getElementById("com.impprove.app:id/bt8"),
 	btnMultiplicacao = getElementById("com.impprove.app:id/btTimes"),
 	btnNumero6 = getElementById("com.impprove.app:id/bt6"),
-	btnvalidarCalculo = getElementById("com.impprove.app:id/btOk"); 
-	
+	btnvalidarCalculo = getElementById("com.impprove.app:id/btOk"),
+	btnIgual = getElementById("com.impprove.app:id/btEquals");	
 	
 	public void abrirMenuDeNovaTranferência()throws Exception{
 		logger.debug("início de abrir Menu de Nova Tranferência");
@@ -49,6 +49,7 @@ public class TransacoesActivity extends PageBase {
 		}
 		btnMultiplicacao.click();
 		btnNumero6.click();
+		btnIgual.click();
 		
 		btnvalidarCalculo.click();
 		logger.debug("fim de cálculo de Nova Despesa No Crédito");
