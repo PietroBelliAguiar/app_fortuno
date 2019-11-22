@@ -16,6 +16,8 @@ public class IntroducaoStep {
 	@Dado("que é o primeiro acesso do usuário")
 	public void primeiroAcessoNoApp() throws Exception{
 		intro.telaDePrimeiroAcesso();
+		home.abrirMenuBlackFridayQuandoForMostrado();
+		
 	}
 	
 	

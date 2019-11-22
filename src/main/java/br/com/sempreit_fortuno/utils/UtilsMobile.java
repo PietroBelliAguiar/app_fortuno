@@ -56,7 +56,8 @@ public class UtilsMobile extends PageBase {
 			btnAcessarTransacoes = getElementByXPath(
 					"(//android.view.ViewGroup/android.widget.RelativeLayout/android.widget.ImageView)[1]"),
 			btnFecharCategoria = getElementById("dialog_congrats_close"),
-			modalTransicaoPaginas = getElementById("loading_image");
+			modalTransicaoPaginas = getElementById("loading_image"),
+			btnOKCalculadora = getElementById("com.impprove.app:id/btOk");
 
 	public String retornarDataSistema() throws Exception {
 
@@ -606,7 +607,9 @@ public class UtilsMobile extends PageBase {
 			VirtualElement numeroDigitado = getElementById(idNumGenerico);
 			
 			numeroDigitado.click();
+			
 		}
 		logger.debug("fim inserção de dados na calculadora");
+		btnOKCalculadora.click();
 	}
 }

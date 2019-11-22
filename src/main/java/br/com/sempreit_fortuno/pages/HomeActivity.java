@@ -44,8 +44,9 @@ public class HomeActivity extends PageBase {
 			menuPerfilAjustes = getElementByXPath("//android.widget.CheckedTextView[@text='Perfil & Ajustes']"),
 			menuCategorias = getElementByXPath("//android.widget.CheckedTextView[@text='Categorias']"),
 			menuCorDoTema = getElementByXPath("//android.widget.CheckedTextView[@text='Cor do tema']"),
-			menuFlutuante = getElementByXPath("//android.widget.ImageButton//..//android.widget.ImageView");
-
+			menuFlutuante = getElementByXPath("//android.widget.ImageButton//..//android.widget.ImageView"),
+			modelBlackFriday = getElementById("com.impprove.app:id/ivPromo");
+	
 	public void validarHome() throws Exception {
 		Assert.assertTrue(elementIsVisible(textoNomeHome));
 		logger.info("Home validada com sucesso!");
@@ -117,6 +118,12 @@ public class HomeActivity extends PageBase {
 		menuFlutuante.click();
 		logger.debug("fim de abrir menu Flutuante");
 		
+	}
+	public void abrirMenuBlackFridayQuandoForMostrado() throws Exception {
+		if(elementIsVisible(modelBlackFriday)) {
+		modelBlackFriday.click();
+		utils.back();
+		}
 	}
 
 }

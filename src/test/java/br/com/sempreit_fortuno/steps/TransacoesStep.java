@@ -1,6 +1,9 @@
 package br.com.sempreit_fortuno.steps;
 
 import static br.com.smiles.helpers.DataTableHelper.getDt_;
+
+import org.apache.xmlbeans.impl.inst2xsd.SalamiSliceStrategy;
+
 import static br.com.smiles.base.DefaultBaseController.getPage_;
 
 import cucumber.api.java.es.Dado;
@@ -39,14 +42,12 @@ public class TransacoesStep {
 
 	@E("transfira o valor para outra carteira")
 	public void transfiraOValorParaOutraCarteira()throws Exception {
-	    // Write code here that turns the phrase above into concrete actions
-	  
+		transacoes.trocarCarteiraParaTransferir();
 	}
 
 	@Então("devera validar a transferência")
 	public void deveraValidarATransferencia()throws Exception {
-	    // Write code here that turns the phrase above into concrete actions
-	
+		transacoes.salvarTranferencia();
 	}
 	
 	//REG-402

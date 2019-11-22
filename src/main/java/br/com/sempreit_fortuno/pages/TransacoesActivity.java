@@ -21,7 +21,11 @@ public class TransacoesActivity extends PageBase {
 	btnMultiplicacao = getElementById("com.impprove.app:id/btTimes"),
 	btnNumero6 = getElementById("com.impprove.app:id/bt6"),
 	btnvalidarCalculo = getElementById("com.impprove.app:id/btOk"),
-	btnIgual = getElementById("com.impprove.app:id/btEquals");	
+	btnIgual = getElementById("com.impprove.app:id/btEquals"),	
+	btnTransferirCarteira = getElementByXPath("(//android.widget.TextView[@text='Carteira'])[2]"),
+	btnSelecionarOutraCarteira = getElementByXPath("//android.widget.TextView[@text='Zé']"),
+	salvarTransferencia = getElementById("com.impprove.app:id/action_save");
+	
 	
 	public void abrirMenuDeNovaTranferência()throws Exception{
 		logger.debug("início de abrir Menu de Nova Tranferência");
@@ -41,5 +45,16 @@ public class TransacoesActivity extends PageBase {
 		logger.debug("início de abrir Menu de Nova Despesa No Crédito ");
 		abrirMenuDeNovaDespesaNoCredito.click();
 		logger.debug("fim de abrir menu Nova Despesa No Crédito");
+	}
+	public void trocarCarteiraParaTransferir()throws Exception{
+		logger.debug("início de trocar Carteira Para Transferir");
+		btnTransferirCarteira.click();
+		btnSelecionarOutraCarteira.click();
+		logger.debug("fim de trocar Carteira Para Transferir");
+	}
+	public void salvarTranferencia()throws Exception {
+		logger.debug("início de salvar Transferência");
+		salvarTransferencia.click();
+		logger.debug("fim de salvar Transferência");
 	}
 }
