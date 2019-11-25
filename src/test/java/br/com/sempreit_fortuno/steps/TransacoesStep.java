@@ -47,46 +47,55 @@ public class TransacoesStep {
 
 	@Então("devera validar a transferência")
 	public void deveraValidarATransferencia()throws Exception {
-		transacoes.salvarTranferencia();
+		transacoes.salvarTransacao();
 	}
 	
 	//REG-402
 	
 	@Dado("que o usuário abra a tela de nova receita")
 	public void queOUsuarioAbraATelaDeNovaReceita()throws Exception {
-	    // Write code here that turns the phrase above into concrete actions
-	  
+		transacoes.abrirMenuDeNovaReceita();
 	}
 
 	@E("coloque as informações necessárias para a receita")
 	public void coloqueAsInformacoesNecessarias()throws Exception {
-	    // Write code here that turns the phrase above into concrete actions
-	  
+	   utils.inserirValorCalculadoraFortuno(getDt_().getStringOf("in_Valor_Calculadora_Transferencia"));
+	   transacoes.selecionarCalendarioNovaReceita();
+	   transacoes.selecionarDiaCalendario();
+	   transacoes.validarDataCalendario();
+	   transacoes.trocarTipoDeReceita();
+	   transacoes.escolherParcelaOuRepetir();
+	   transacoes.escolherQuantidadeDeParcelas(getDt_().getStringOf("in_Quantidade_Parcelas"));
+	   
+	   
 	}
 
 	@Então("devera validar a receita")
 	public void deveraValidarAReceita()throws Exception {
-	    // Write code here that turns the phrase above into concrete actions
-	   
+		transacoes.salvarTransacao();
 	}
 	
 	//REG-403
 	
 	@Dado("que o usuário abra a tela de nova despesa")
 	public void queOUsuarioAbraATelaDeNovaDespesa() throws Exception{
-	    // Write code here that turns the phrase above into concrete actions
-	 
+		transacoes.abrirMenuDeNovaDespesa();
 	}
 	@E("coloque as informações necessárias para a despesa")
 	public void coloqueAsInformacoesNecessariasParaADespesa()throws Exception {
-	    // Write code here that turns the phrase above into concrete actions
-	  
+		utils.inserirValorCalculadoraFortuno(getDt_().getStringOf("in_Quantidade_Parcelas"));
+		transacoes.selecionarCalendarioNovaReceita();
+		transacoes.selecionarDiaCalendario();
+		transacoes.validarDataCalendario();
+		transacoes.escolherTipoDeDespesa();
+		transacoes.escolherParcelaOuRepetir();
+		transacoes.escolherQuantidadeDeParcelas(getDt_().getStringOf("in_Quantidade_Parcelas"));
+		
 	}
 
 	@Então("devera validar a nova despesa")
 	public void deveraValidarANovaDespesa() throws Exception{
-	    // Write code here that turns the phrase above into concrete actions
-	  
+		transacoes.salvarTransacao();
 	}
 	
 	//REG-404
