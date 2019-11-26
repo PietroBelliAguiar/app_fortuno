@@ -35,8 +35,12 @@ public class TransacoesActivity extends PageBase {
 	btnParcelarValor = getElementById("com.impprove.app:id/rbInstallments"),
 	qtdParcelas = getElementById("com.impprove.app:id/edNumber"),
 	btnAbrirEscolhaDespesa = getElementById("com.impprove.app:id/tvCategoryName"),
-	btnEscolherDespesa = getElementByXPath("//android.widget.TextView[contains(@text,'Saúde')]");
+	btnEscolherDespesa = getElementByXPath("//android.widget.TextView[contains(@text,'Saúde')]"),
+	btnMesAnoFatura = getElementById("com.impprove.app:id/tvBillStatement"),
+	mesAnoFaturaSelecionado = getElementByXPath("//android.widget.TextView[contains(@text,'Setembro, 2019')]");
 	
+	
+	//REG-401
 	public void abrirMenuDeNovaTranferência()throws Exception{
 		logger.debug("início de abrir Menu de Nova Tranferência");
 		abrirMenuDeNovaTransferência.click();
@@ -73,7 +77,7 @@ public class TransacoesActivity extends PageBase {
 		btnMenuNovaReceita.click();
 		logger.debug("fim de abrir Menu Nova Receita");
 	}
-	public void selecionarCalendarioNovaReceita()throws Exception{
+	public void selecionarCalendario()throws Exception{
 		logger.debug("início de selecionar Calendário Nova Receita");
 		btnTrocarData.click();
 		btnDiaData.click();
@@ -116,5 +120,13 @@ public class TransacoesActivity extends PageBase {
 		logger.debug("fim de escolher Tipo de Despesa");
 	}
 	
+	//REG-404
+	
+	public void escolherMesAnoFatura()throws Exception{
+		logger.debug("início de esolhcer Mes Ano Fatura");
+		btnMesAnoFatura.click();
+		mesAnoFaturaSelecionado.click();
+		logger.debug("fim de esolhcer Mes Ano Fatura");
+	}
 }
 

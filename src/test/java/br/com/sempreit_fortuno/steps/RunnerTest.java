@@ -11,7 +11,7 @@ import cucumber.api.junit.Cucumber;
 	snippets = SnippetType.CAMELCASE,
 	features = {"classpath:features"},
 	glue = {"br.com.sempreit_fortuno"},
-	tags = {"@android","@REG-403"}
+	tags = {"@android","@REG-404"}
 )
 public class RunnerTest {
 	

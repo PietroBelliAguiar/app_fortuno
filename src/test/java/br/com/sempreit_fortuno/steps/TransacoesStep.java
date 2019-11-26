@@ -60,7 +60,7 @@ public class TransacoesStep {
 	@E("coloque as informações necessárias para a receita")
 	public void coloqueAsInformacoesNecessarias()throws Exception {
 	   utils.inserirValorCalculadoraFortuno(getDt_().getStringOf("in_Valor_Calculadora_Transferencia"));
-	   transacoes.selecionarCalendarioNovaReceita();
+	   transacoes.selecionarCalendario();
 	   transacoes.selecionarDiaCalendario();
 	   transacoes.validarDataCalendario();
 	   transacoes.trocarTipoDeReceita();
@@ -83,8 +83,8 @@ public class TransacoesStep {
 	}
 	@E("coloque as informações necessárias para a despesa")
 	public void coloqueAsInformacoesNecessariasParaADespesa()throws Exception {
-		utils.inserirValorCalculadoraFortuno(getDt_().getStringOf("in_Quantidade_Parcelas"));
-		transacoes.selecionarCalendarioNovaReceita();
+		utils.inserirValorCalculadoraFortuno(getDt_().getStringOf("in_Valor_Calculadora_Transferencia"));
+		transacoes.selecionarCalendario();
 		transacoes.selecionarDiaCalendario();
 		transacoes.validarDataCalendario();
 		transacoes.escolherTipoDeDespesa();
@@ -102,20 +102,24 @@ public class TransacoesStep {
 	
 	@Dado("que o usuário abra a tela de nova despesa do cartão")
 	public void queOUsuárioAbraATelaDeNovaDespesaDoCartão()throws Exception {
-	    // Write code here that turns the phrase above into concrete actions
-	
+		transacoes.abrirMenuDeNovaDespesaNoCredito();
 	}
 
 	@Dado("declare as informações necessárias para o cartão")
 	public void declareAsInformaçõesNecessárias()throws Exception {
-	    // Write code here that turns the phrase above into concrete actions
-	    
+	    utils.inserirValorCalculadoraFortuno(getDt_().getStringOf("in_Valor_Calculadora_Transferencia"));
+	    transacoes.selecionarCalendario();
+	    transacoes.selecionarDiaCalendario();
+	    transacoes.validarDataCalendario();
+	    transacoes.escolherMesAnoFatura();
+	    transacoes.escolherTipoDeDespesa();
+	    transacoes.escolherParcelaOuRepetir();
+	    transacoes.escolherQuantidadeDeParcelas(getDt_().getStringOf("in_Quantidade_Parcelas"));
 	}
 
 	@Então("devera validar a despesa do cartão")
 	public void deveraValidarADespesaDoCartão()throws Exception {
-	    // Write code here that turns the phrase above into concrete actions
-
+		transacoes.salvarTransacao();
 	}
 
 	
