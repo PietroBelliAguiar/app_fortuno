@@ -12,6 +12,7 @@ import br.com.sempreit_fortuno.utils.UtilsMobile;
 import br.com.smiles.base.PageBase;
 import br.com.smiles.base.VirtualElement;
 import br.com.smiles.helpers.LoggerHelper;
+import br.com.smiles.interfaces.Direction;
 
 public class HomeActivity extends PageBase {
 
@@ -30,6 +31,7 @@ public class HomeActivity extends PageBase {
 			faturasDeCartao = getElementById("com.impprove.app:id/tvLabelPendingCreditCardBill"),
 			saldoSeguro = getElementById("com.impprove.app:id/tvLabelSafeBalance"),
 			avaliacaoPremium = getElementById("com.impprove.app:id/tvSubscribedPlan"),
+			btnAbrirPremium = getElementById("com.impprove.app:id/btBePremium"),
 			validarTelaPremium = getElementByXPath("//android.widget.TextView[@text='ESCOLHA O PLANO IDEAL PARA VOCÊ']"),
 			menu = getElementByXPath("(//android.widget.ImageButton)[1]"),
 			menuVisaoGeral = getElementByXPath("//android.widget.CheckedTextView[@text='Visão geral']"),
@@ -108,8 +110,9 @@ public class HomeActivity extends PageBase {
 		menuTransacoes.click();
 		logger.debug("fim de acessar menu de transações");
 	}
-	public void acessarMenuLateral()throws Exception {
+	public void abrirMenuLateral()throws Exception {
 		logger.debug("início de acessar menu lateral ");
+		
 		menu.click();
 		logger.debug("fim de acessar menu lateral");
 	}
@@ -120,10 +123,43 @@ public class HomeActivity extends PageBase {
 		
 	}
 	public void abrirMenuBlackFridayQuandoForMostrado() throws Exception {
+		logger.debug("início de abrir Menu Black Friday Quando For Mostrado ");
 		if(elementIsVisible(modelBlackFriday)) {
 		modelBlackFriday.click();
 		utils.back();
+		logger.debug("fim de abrir Menu Black Friday Quando For Mostrado ");
 		}
 	}
-
+	public void abrirMenuOrçamentos()throws Exception {
+		logger.debug("início de abrir Menu Orçamentos");
+		menuOrcamentos.click();
+		logger.debug("fim de abrir Menu Orçamentos");
+	}
+	public void abrirMenuGraficos()throws Exception  {
+		logger.debug("início de abrir Menu Graficos");
+		menuGraficos.click();
+		logger.debug("fim de abrir Menu Graficos");
+	}
+	public void abrirTotalGeral()throws Exception{
+		logger.debug("início de abrir Total geral");
+		menuTotalGeral.click();
+		logger.debug("fim de abrir Total geral");
+	}
+	public void abrirMenuPerfilAjustes()throws Exception{
+		logger.debug("início de abrir Menu Perfil & Ajustes");
+		menuPerfilAjustes.click();
+		logger.debug("fim de abrir Menu Perfil & Ajustes");
+	}
+	public void abrirMigrarParaPremium()throws Exception  {
+		logger.debug("início de abrir tela premium");
+		utils.swipeToElement(btnAbrirPremium, Direction.DOWN, 1);
+		btnAbrirPremium.click();
+		logger.debug("fim de abrir tela premium");
+	}
+	public void validarTelaPremium()throws Exception{
+		logger.debug("início de validar tela premium");
+		assertTrue(elementIsVisible(validarTelaPremium));
+		logger.debug("fim de validar tela premium");
+	}
+		
 }

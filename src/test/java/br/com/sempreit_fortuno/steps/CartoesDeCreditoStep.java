@@ -5,17 +5,21 @@ import static br.com.smiles.base.DefaultBaseController.getPage_;
 import br.com.sempreit_fortuno.pages.CartoesDeCreditoActivity;
 import br.com.sempreit_fortuno.pages.HomeActivity;
 import br.com.sempreit_fortuno.pages.IntroducaoActivity;
+import br.com.sempreit_fortuno.pages.TransacoesActivity;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.E;
 import cucumber.api.java.pt.Então;
 import static br.com.smiles.helpers.DataTableHelper.getDt_;
+import br.com.sempreit_fortuno.utils.UtilsMobile;
 
 public class CartoesDeCreditoStep {
 	
 	HomeActivity home = getPage_(HomeActivity.class);
 	IntroducaoActivity intro = getPage_(IntroducaoActivity.class);
 	CartoesDeCreditoActivity cartoes = getPage_(CartoesDeCreditoActivity.class);
-	
+	UtilsMobile utils = getPage_(UtilsMobile.class);
+	TransacoesActivity transacoes = getPage_(TransacoesActivity.class);
+
 	//Contexto
 	@Dado("que o usuário acesse a tela de Cartões de Crédito")
 	public void queOUsuarioAcesseATelaDeCartoesDeCredito() throws Exception{
@@ -46,29 +50,45 @@ public class CartoesDeCreditoStep {
 	
 	@Dado("que o usuário adicione uma nova despesa no cartão")
 	public void queOUsuarioAdicioneUmaNovaDespesaNoCartao() throws Exception{
-	    
+		cartoes.abrirCartaoDeCredito();
+		cartoes.abrirMenuDeOpcoes();
+	    cartoes.abrirMenuNovaDespesaCartão();
+	    utils.inserirValorCalculadoraFortuno(getDt_().getStringOf("in_Valor_Calculadora_Transferencia"));
+	    transacoes.selecionarCalendario();
+	    transacoes.selecionarDiaCalendario();
+	    transacoes.validarDataCalendario();
+	    transacoes.escolherMesAnoFatura();
+	    transacoes.escolherTipoDeDespesa();
+	   
 	}
 
 	@E("escolhe entre repetir ou parcelar despesa")
 	public void escolheEntreRepetirOuParcelarDespesa() throws Exception {
-	    // Write code here that turns the phrase above into concrete actions
+		 transacoes.escolherParcelaOuRepetir();
+		 transacoes.escolherQuantidadeDeParcelas(getDt_().getStringOf("in_Quantidade_Parcelas"));
 	}
 
 	@Então("deverá ser validado o cadastro de despesa")
 	public void deveraSerValidadoOCadastroDeDespesa() throws Exception {
-	    
+	    transacoes.btnSalvar();
 	}
 	
 	//REG-203
 
 	@Dado("que o usuário adicione um novo crédito ou estorno")
 	public void queOUsuarioAdicioneUmNovoCreditoOuEstorno() throws Exception {
-	    
+		cartoes.abrirCartaoDeCredito();
+		cartoes.abrirMenuDeOpcoes();
+	    cartoes.abrirNovoCreditoOuEstorno();
+	    utils.inserirValorCalculadoraFortuno(getDt_().getStringOf("in_Valor_Calculadora_Transferencia"));
+	    transacoes.selecionarCalendario();
+	    transacoes.selecionarDiaCalendario();
+	    transacoes.validarDataCalendario();
 	}
 
 	@Então("deverá ser validado o cadastro do crédito ou estorno")
-	public void deveraSerValidadoOCadastroDoCreditoOuEstorno() {
-	    
+	public void deveraSerValidadoOCadastroDoCreditoOuEstorno() throws Exception{
+	    transacoes.btnSalvar();
 	}
 	
 	//REG-204

@@ -39,8 +39,12 @@ public class CartoesDeCreditoActivity extends PageBase {
 			diaVencimentoCartao,
 			btnSalvar = getElementById("com.impprove.app:id/action_save"),
 			nomeCartaoSalvo = getElementById("com.impprove.app:id/tvDescription"),
-			limiteCartaoSalvo = getElementById("com.impprove.app:id/tvAvailableLimit");
-
+			limiteCartaoSalvo = getElementById("com.impprove.app:id/tvAvailableLimit"),
+			abrirMenuDeNovasOpcoes = getElementById("com.impprove.app:id/btOptions"),
+			btnNovadDespesa = getElementByXPath("//android.widget.TextView[@text='Nova despesa']"),
+			btnAbrirCartao = getElementByXPath("//android.widget.TextView[@text='NullPointerException']"),
+			btnNovoCreditoOuEstorno = getElementById("com.impprove.app:id/llAddCredit");
+			
 	public void validaTelaDeCartoesDeCredito() throws Exception {
 		utils.elementIsVisible(mensagemTelaCartoesDeCredito);
 		logger.info("Tela de " + mensagemTelaCartoesDeCredito.getText() + " apresentada");
@@ -88,5 +92,24 @@ public class CartoesDeCreditoActivity extends PageBase {
 
 		logger.debug("Fim de validação do cadastro do cartão");
 	}
-
+	public void abrirMenuDeOpcoes()throws Exception{
+		logger.debug("início de abrir Menu De Novas Opcoes");
+		abrirMenuDeNovasOpcoes.click();
+		logger.debug("fim de abrir Menu de Novas Opcoes");
+	}
+	public void abrirMenuNovaDespesaCartão()throws Exception{
+		logger.debug("início de abrir Menu Nova Despesa Cartão");
+		btnNovadDespesa.click();
+		logger.debug("fim de abrir Menu Nova Despesa Cartão");
+	}
+	public void abrirCartaoDeCredito()throws Exception {
+		logger.debug("início de abrir Cartão de Crédito");
+		btnAbrirCartao.click();
+		logger.debug("fim de abrir Cartão de Crédito");
+	}
+	public void abrirNovoCreditoOuEstorno()throws Exception{
+		logger.debug("início de abrir Novo Credito Ou Estorno");
+		btnNovoCreditoOuEstorno.click();
+		logger.debug("fim de abrir Novo Credito Ou Estorno");
+	}
 }

@@ -1,5 +1,4 @@
-# language : pt
-
+#language:pt
 Funcionalidade: Acessar menu Cartões de Crédito
 	Como usuário
 	quero adicionar um ou mais cartões de crédito

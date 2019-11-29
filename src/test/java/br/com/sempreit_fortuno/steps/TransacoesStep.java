@@ -23,9 +23,10 @@ public class TransacoesStep {
 	
 	@Dado("que o usuário abra o menu Transações")
 	public void queOUsuárioAbraOMenuTransações() throws Exception {
-		home.acessarMenuLateral();
+		home.abrirMenuLateral();
 		home.acessarMenuTransacoes();
 		home.abrirMenuFlutuante();
+		
 	}
 	
 	//REG-401
@@ -47,7 +48,7 @@ public class TransacoesStep {
 
 	@Então("devera validar a transferência")
 	public void deveraValidarATransferencia()throws Exception {
-		transacoes.salvarTransacao();
+		transacoes.btnSalvar();
 	}
 	
 	//REG-402
@@ -72,7 +73,7 @@ public class TransacoesStep {
 
 	@Então("devera validar a receita")
 	public void deveraValidarAReceita()throws Exception {
-		transacoes.salvarTransacao();
+		transacoes.btnSalvar();
 	}
 	
 	//REG-403
@@ -95,7 +96,7 @@ public class TransacoesStep {
 
 	@Então("devera validar a nova despesa")
 	public void deveraValidarANovaDespesa() throws Exception{
-		transacoes.salvarTransacao();
+		transacoes.btnSalvar();
 	}
 	
 	//REG-404
@@ -106,7 +107,7 @@ public class TransacoesStep {
 	}
 
 	@Dado("declare as informações necessárias para o cartão")
-	public void declareAsInformaçõesNecessárias()throws Exception {
+	public void declareAsInformacoesNecessarias()throws Exception {
 	    utils.inserirValorCalculadoraFortuno(getDt_().getStringOf("in_Valor_Calculadora_Transferencia"));
 	    transacoes.selecionarCalendario();
 	    transacoes.selecionarDiaCalendario();
@@ -118,8 +119,8 @@ public class TransacoesStep {
 	}
 
 	@Então("devera validar a despesa do cartão")
-	public void deveraValidarADespesaDoCartão()throws Exception {
-		transacoes.salvarTransacao();
+	public void deveraValidarADespesaDoCartao()throws Exception {
+		transacoes.btnSalvar();
 	}
 
 	

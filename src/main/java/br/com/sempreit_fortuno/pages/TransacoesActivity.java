@@ -35,7 +35,7 @@ public class TransacoesActivity extends PageBase {
 	btnParcelarValor = getElementById("com.impprove.app:id/rbInstallments"),
 	qtdParcelas = getElementById("com.impprove.app:id/edNumber"),
 	btnAbrirEscolhaDespesa = getElementById("com.impprove.app:id/tvCategoryName"),
-	btnEscolherDespesa = getElementByXPath("//android.widget.TextView[contains(@text,'Saúde')]"),
+	btnEscolherDespesa = getElementByXPath("//android.widget.TextView[contains(@text,'Lazer')]"),
 	btnMesAnoFatura = getElementById("com.impprove.app:id/tvBillStatement"),
 	mesAnoFaturaSelecionado = getElementByXPath("//android.widget.TextView[contains(@text,'Setembro, 2019')]");
 	
@@ -66,7 +66,7 @@ public class TransacoesActivity extends PageBase {
 		btnSelecionarOutraCarteira.click();
 		logger.debug("fim de trocar Carteira Para Transferir");
 	}
-	public void salvarTransacao()throws Exception {
+	public void btnSalvar()throws Exception {
 		logger.debug("início de salvar Transferência");
 		salvarTransacao.click();
 		logger.debug("fim de salvar Transferência");
