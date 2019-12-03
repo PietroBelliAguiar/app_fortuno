@@ -10,6 +10,8 @@ import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.E;
 import cucumber.api.java.pt.Então;
 import static br.com.smiles.helpers.DataTableHelper.getDt_;
+import static org.junit.Assert.assertTrue;
+
 import br.com.sempreit_fortuno.utils.UtilsMobile;
 
 public class CartoesDeCreditoStep {
@@ -95,46 +97,59 @@ public class CartoesDeCreditoStep {
 
 	@Dado("que o usuário acesse a opção editar cartão")
 	public void queOUsuarioAcesseAOpcaoEditarCartão() throws Exception {
-	    
+	    cartoes.abrirCartaoDeCredito();
+	    cartoes.abrirMenuDeOpcoes();
+	    cartoes.abrirEditarCartao();
+	   
 	}
 
 	@E("alterar os dados do cartão")
 	public void alterarOsDadosDoCartao() throws Exception {
-	    
+		 cartoes.alterarValorCartao();
+		 utils.inserirValorCalculadoraFortuno(getDt_().getStringOf("in_Valor_Calculadora_Transferencia"));
+		 cartoes.trocarBandeiraCartao();
+		 cartoes.trocarDiaFechamentoCartao();
+		 cartoes.trocarDiaVencimentoCartao();
 	}
 
 	@Então("de deverá ser validado as alterações do cartão")
 	public void deDeveraSerValidadoAsAlteracoesDoCartao() throws Exception {
-	    
+		
+	    cartoes.validarEdicaoDoCartao();
 	}
 	
 	//REG-205
 
 	@Dado("que o usuário tenha uma despesa cadastrada")
-	public void queOUsuarioTenhaUmaDespesaCadastrada() {
-	    
+	public void queOUsuarioTenhaUmaDespesaCadastrada()throws Exception {
+		cartoes.abrirCartaoDeCredito();
+	    cartoes.validarValorDaFatura();
 	}
 
 	@E("realize o pagamento da despesa")
 	public void realizeOPagamentoDaDespesa() throws Exception {
-	    
+	    //cartoes.realizarPagamentoFatura();
 	}
 
 	@Então("deverá ser validado o pagamento da despesa")
 	public void deveraSerValidadoOPagamentoDaDespesa() throws Exception{
-	    
+	    cartoes.validarPagamentoDaFaturaNoCartao();
 	}
 	
 	//REG-206
 
 	@Dado("que o usuário tenha um cartão de crédito cadastrado")
 	public void queOUsuarioTenhaUmCartaoDeCreditoCadastrado() throws Exception {
-	   
+		cartoes.abrirCartaoDeCredito();
+	    cartoes.abrirMenuDeOpcoes();
+	    cartoes.abrirEditarCartao();
 	}
 
 	@E("escolha remover o cartão")
 	public void escolhaRemoverOCartao() throws Exception{
-		
+		cartoes.realizarExclusaoCartao();
+		//cartoes.CampoTextoExclusaoCartao(getDt_().getStringOf("in_Confirmar_Exclusao"));
+		//cartoes.confirmarExclusaoCartao();
 	}
 
 	@Então("deverá ser validado a exclusão do cartão")

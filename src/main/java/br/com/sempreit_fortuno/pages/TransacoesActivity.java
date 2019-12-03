@@ -27,7 +27,7 @@ public class TransacoesActivity extends PageBase {
 	salvarTransacao = getElementById("com.impprove.app:id/action_save"),
 	btnMenuNovaReceita = getElementById("com.impprove.app:id/fab_income"),
 	btnTrocarData = getElementById("com.impprove.app:id/tvDate"),
-	btnDiaData = getElementByXPath("//android.view.View[@content-desc=\"15 novembro 2019\"]"),
+	btnDiaData = getElementByXPath("//android.view.View[@content-desc=\"15 dezembro 2019\"]"),
 	btnValidarDataCalendario = getElementById("android:id/button1"),
 	btnInvestimentos = getElementById("com.impprove.app:id/tvCategoryName"),
 	investimentosEscolhas = getElementByXPath("//android.widget.TextView[contains(@text,'Salário')]"),

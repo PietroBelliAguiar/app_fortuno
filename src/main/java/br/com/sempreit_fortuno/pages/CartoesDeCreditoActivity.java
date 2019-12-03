@@ -43,8 +43,24 @@ public class CartoesDeCreditoActivity extends PageBase {
 			abrirMenuDeNovasOpcoes = getElementById("com.impprove.app:id/btOptions"),
 			btnNovadDespesa = getElementByXPath("//android.widget.TextView[@text='Nova despesa']"),
 			btnAbrirCartao = getElementByXPath("//android.widget.TextView[@text='NullPointerException']"),
-			btnNovoCreditoOuEstorno = getElementById("com.impprove.app:id/llAddCredit");
-			
+			btnNovoCreditoOuEstorno = getElementById("com.impprove.app:id/llAddCredit"),
+			btnEditarCartao = getElementById("com.impprove.app:id/llEditCard"),
+			btnAlterarValor = getElementById("com.impprove.app:id/edCreditLimit"),
+			btnTrocarBandeiraCartao = getElementById("com.impprove.app:id/edBrand"),
+			btnSelecionarOutraBandeiraCartao = getElementByXPath("//android.widget.TextView[@text='Mastercard']"),
+			btnTrocarDiaFechamentoCartao = getElementById("com.impprove.app:id/edClosingDay"),
+			btnTrocarDiaVencimento = getElementById("com.impprove.app:id/edDueDay"),
+			btnDiaSelecionadoFechamentoCartao = getElementByXPath("//android.widget.TextView[@text='16']"),
+			btnDiaSelecionadoVencimentoCartao = getElementByXPath("//android.widget.TextView[@text='28']"),
+			btnValidarEdicaoCartao = getElementById("com.impprove.app:id/action_save"),
+			validarFaturaCartao = getElementById("com.impprove.app:id/tvSpendings"),
+			btnPagarFatura = getElementById("com.impprove.app:id/btPayBillStatement"),
+			btnConfirmarPagamentoFatura = getElementById("com.impprove.app:id/btConfirm"),
+			validarFaturaPaga = getElementByXPath("//android.widget.TextView[contains(@text,'Pagamento de fatura')]"),
+			btnExcluir = getElementByXPath("//android.widget.TextView[@contains(@tex)]"),
+			campoTextoConfirmar = getElementById("com.impprove.app:id/edConfirm"),
+			btnConfirmar = getElementById("com.impprove.app:id/btConfirm");
+	
 	public void validaTelaDeCartoesDeCredito() throws Exception {
 		utils.elementIsVisible(mensagemTelaCartoesDeCredito);
 		logger.info("Tela de " + mensagemTelaCartoesDeCredito.getText() + " apresentada");
@@ -112,4 +128,75 @@ public class CartoesDeCreditoActivity extends PageBase {
 		btnNovoCreditoOuEstorno.click();
 		logger.debug("fim de abrir Novo Credito Ou Estorno");
 	}
+	public void abrirEditarCartao()throws Exception {
+		logger.debug("início de abrir Editar Cartão");
+		btnEditarCartao.click();
+		logger.debug("fim de abrir Editar Cartão");
+	}
+	public void alterarValorCartao()throws Exception{
+		logger.debug("início de alterar Valor do Cartão");
+		btnAlterarValor.click();
+		logger.debug("fim de alterar Valor do Cartão");
+	}
+	public void trocarBandeiraCartao()throws Exception{
+		logger.debug("início de trocar Bandeira Cartão");
+		btnTrocarBandeiraCartao.click();
+		btnSelecionarOutraBandeiraCartao.click();
+		logger.debug("fim de alterar Bandeira Cartão");
+	}
+	public void trocarDiaFechamentoCartao() throws Exception{
+		logger.debug("início de trocar Dia Fechamento Cartão");
+		btnTrocarDiaFechamentoCartao.click();
+		btnDiaSelecionadoFechamentoCartao.click();
+		logger.debug("fim de trocar Dia Fechamento Cartão");
+
+	}
+	public void trocarDiaVencimentoCartao()throws Exception{
+		logger.debug("início de trocar Dia Vencimento Cartão");
+		btnTrocarDiaVencimento.click();
+		btnDiaSelecionadoVencimentoCartao.click();
+		logger.debug("fim de trocar Dia Vencimento Cartão");
+	}
+	public void validarEdicaoDoCartao()throws Exception {
+		logger.debug("início de validar Edição do Cartão");
+		btnValidarEdicaoCartao.click();
+		logger.debug("fim de validar Edição do Cartão");
+	}
+	public void validarValorDaFatura() throws Exception{
+		logger.debug("início de validar Valor da Fatura");
+		assertTrue(elementIsVisible(validarFaturaCartao));
+		logger.info("Valor da fatura validada com sucesso!");
+		logger.debug("fim de validar Valor da Fatura");
+	}
+	public void realizarPagamentoFatura()throws Exception{
+		logger.debug("início de realizar Pagamento Fatura");
+		btnConfirmarPagamentoFatura.click();
+		logger.debug("início de realizar Pagamento Fatura");
+	}
+	public void validarPagamentoDaFaturaNoCartao()throws Exception{
+		logger.debug("início de validar Fatura no Cartão");
+		assertTrue(elementIsVisible(validarFaturaPaga));
+		logger.info("Fatura Paga com sucesso!");
+		logger.debug("fim de validar Fatura no Cartão");
+
+	}
+	public void realizarExclusaoCartao() throws Exception{
+		logger.debug("início de realizar Exclusão do Cartão");
+		btnExcluir.click();
+		logger.debug("fim de realizar Exclusão do Cartão");
+
+	}
+	public void CampoTextoExclusaoCartao(String confirmar)throws Exception{
+		logger.debug("início de Campo Texto Exclusão do Cartão");
+		campoTextoConfirmar.click();
+		logger.debug("fim de confirmar Exclusão do Cartão");
+
+	}
+	public void confirmarExclusaoCartao() throws Exception{
+		logger.debug("início de confirmar Exclusão do Cartão");
+		btnConfirmar.click();
+		logger.debug("fim de confirmar Exclusão do Cartão");
+
+	}
+	
 }
