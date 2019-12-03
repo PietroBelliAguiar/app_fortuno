@@ -110,94 +110,127 @@ public class CartoesDeCreditoActivity extends PageBase {
 	}
 	public void abrirMenuDeOpcoes()throws Exception{
 		logger.debug("início de abrir Menu De Novas Opcoes");
+		logger.info("início de abrir Menu De Novas Opcoes");
 		abrirMenuDeNovasOpcoes.click();
+		logger.info("fim de abrir Menu de Novas Opcoes");
 		logger.debug("fim de abrir Menu de Novas Opcoes");
 	}
 	public void abrirMenuNovaDespesaCartão()throws Exception{
 		logger.debug("início de abrir Menu Nova Despesa Cartão");
+		logger.info("início de abrir Menu Nova Despesa Cartão");
 		btnNovadDespesa.click();
+		logger.info("fim de abrir Menu Nova Despesa Cartão");
 		logger.debug("fim de abrir Menu Nova Despesa Cartão");
 	}
 	public void abrirCartao()throws Exception {
 		logger.debug("início de abrir Cartão de Crédito");
+		logger.info("início de abrir Cartão de Crédito");
 		btnAbrirCartao.click();
+		logger.info("fim de abrir Cartão de Crédito");
 		logger.debug("fim de abrir Cartão de Crédito");
 	}
 	public void abrirNovoCreditoOuEstorno()throws Exception{
 		logger.debug("início de abrir Novo Credito Ou Estorno");
+		logger.info("início de abrir Novo Credito Ou Estorno");
 		btnNovoCreditoOuEstorno.click();
+		logger.info("fim de abrir Novo Credito Ou Estorno");
 		logger.debug("fim de abrir Novo Credito Ou Estorno");
 	}
 	public void abrirEditarCartao()throws Exception {
 		logger.debug("início de abrir Editar Cartão");
+		logger.info("início de abrir Editar Cartão");
 		btnEditarCartao.click();
+		logger.info("fim de abrir Editar Cartão");
 		logger.debug("fim de abrir Editar Cartão");
 	}
 	public void alterarValorCartao()throws Exception{
 		logger.debug("início de alterar Valor do Cartão");
+		logger.info("início de alterar Valor do Cartão");
 		btnAlterarValor.click();
+		logger.info("fim de alterar Valor do Cartão");
 		logger.debug("fim de alterar Valor do Cartão");
 	}
 	public void trocarBandeiraCartao()throws Exception{
 		logger.debug("início de trocar Bandeira Cartão");
+		logger.info("início de trocar Bandeira Cartão");
 		btnTrocarBandeiraCartao.click();
 		btnSelecionarOutraBandeiraCartao.click();
+		logger.info("fim de alterar Bandeira Cartão");
 		logger.debug("fim de alterar Bandeira Cartão");
 	}
 	public void trocarDiaFechamentoCartao() throws Exception{
 		logger.debug("início de trocar Dia Fechamento Cartão");
+		logger.info("início de trocar Dia Fechamento Cartão");
 		btnTrocarDiaFechamentoCartao.click();
 		btnDiaSelecionadoFechamentoCartao.click();
+		logger.info("fim de trocar Dia Fechamento Cartão");
 		logger.debug("fim de trocar Dia Fechamento Cartão");
 
 	}
 	public void trocarDiaVencimentoCartao()throws Exception{
 		logger.debug("início de trocar Dia Vencimento Cartão");
+		logger.info("início de trocar Dia Vencimento Cartão");
 		btnTrocarDiaVencimento.click();
 		btnDiaSelecionadoVencimentoCartao.click();
+		logger.info("fim de trocar Dia Vencimento Cartão");
 		logger.debug("fim de trocar Dia Vencimento Cartão");
 	}
 	public void validarEdicaoDoCartao()throws Exception {
 		logger.debug("início de validar Edição do Cartão");
+		logger.info("início de validar Edição do Cartão");
 		btnValidarEdicaoCartao.click();
+		logger.info("fim de validar Edição do Cartão");
 		logger.debug("fim de validar Edição do Cartão");
 	}
 	public void validarValorDaFatura() throws Exception{
 		logger.debug("início de validar Valor da Fatura");
+		logger.info("início de validar Valor da Fatura");
 		assertTrue(elementIsVisible(validarFaturaCartao));
 		logger.info("Valor da fatura validada com sucesso!");
+		logger.info("fim de validar Valor da Fatura");
 		logger.debug("fim de validar Valor da Fatura");
 	}
 	public void realizarPagamentoFatura()throws Exception{
 		logger.debug("início de realizar Pagamento Fatura");
+		logger.info("início de realizar Pagamento Fatura");
 		btnConfirmarPagamentoFatura.click();
+		logger.info("início de realizar Pagamento Fatura");
 		logger.debug("início de realizar Pagamento Fatura");
 	}
 	public void validarPagamentoDaFaturaNoCartao()throws Exception{
 		logger.debug("início de validar Fatura no Cartão");
+		logger.debug("início de validar Fatura no Cartão");
 		assertTrue(elementIsVisible(validarFaturaPaga));
 		logger.info("Fatura Paga com sucesso!");
+		logger.info("fim de validar Fatura no Cartão");
 		logger.debug("fim de validar Fatura no Cartão");
 
 	}
 	public void realizarExclusaoCartao() throws Exception{
 		logger.debug("início de realizar Exclusão do Cartão");
+		logger.info("início de realizar Exclusão do Cartão");
 		btnExcluir.click();
+		logger.info("fim de realizar Exclusão do Cartão");
 		logger.debug("fim de realizar Exclusão do Cartão");
 
 	}
 	public void CampoTextoExclusaoCartao(String confirmar)throws Exception{
 		logger.debug("início de Campo Texto Exclusão do Cartão");
+		logger.info("início de Campo Texto Exclusão do Cartão");
 		campoTextoConfirmar.sendKeys(confirmar);
 		campoTextoConfirmar.click();
+		logger.info("fim de confirmar Exclusão do Cartão");
 		logger.debug("fim de confirmar Exclusão do Cartão");
 
 	}
 	public void confirmarExclusaoCartao() throws Exception{
 		logger.debug("início de confirmar Exclusão do Cartão");
+		logger.info("início de confirmar Exclusão do Cartão");
 		btnConfirmar.click();
+		logger.info("fim de confirmar Exclusão do Cartão");
 		logger.debug("fim de confirmar Exclusão do Cartão");
 
 	}
+	
 	
 }
