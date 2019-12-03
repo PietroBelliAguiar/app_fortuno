@@ -42,7 +42,7 @@ public class CartoesDeCreditoActivity extends PageBase {
 			limiteCartaoSalvo = getElementById("com.impprove.app:id/tvAvailableLimit"),
 			abrirMenuDeNovasOpcoes = getElementById("com.impprove.app:id/btOptions"),
 			btnNovadDespesa = getElementByXPath("//android.widget.TextView[@text='Nova despesa']"),
-			btnAbrirCartao = getElementByXPath("//android.widget.TextView[@text='NullPointerException']"),
+			btnAbrirCartao = getElementById("com.impprove.app:id/rlCardInfo"),
 			btnNovoCreditoOuEstorno = getElementById("com.impprove.app:id/llAddCredit"),
 			btnEditarCartao = getElementById("com.impprove.app:id/llEditCard"),
 			btnAlterarValor = getElementById("com.impprove.app:id/edCreditLimit"),
@@ -57,7 +57,7 @@ public class CartoesDeCreditoActivity extends PageBase {
 			btnPagarFatura = getElementById("com.impprove.app:id/btPayBillStatement"),
 			btnConfirmarPagamentoFatura = getElementById("com.impprove.app:id/btConfirm"),
 			validarFaturaPaga = getElementByXPath("//android.widget.TextView[contains(@text,'Pagamento de fatura')]"),
-			btnExcluir = getElementByXPath("//android.widget.TextView[@contains(@tex)]"),
+			btnExcluir = getElementById("com.impprove.app:id/action_delete"),
 			campoTextoConfirmar = getElementById("com.impprove.app:id/edConfirm"),
 			btnConfirmar = getElementById("com.impprove.app:id/btConfirm");
 	
@@ -118,7 +118,7 @@ public class CartoesDeCreditoActivity extends PageBase {
 		btnNovadDespesa.click();
 		logger.debug("fim de abrir Menu Nova Despesa Cartão");
 	}
-	public void abrirCartaoDeCredito()throws Exception {
+	public void abrirCartao()throws Exception {
 		logger.debug("início de abrir Cartão de Crédito");
 		btnAbrirCartao.click();
 		logger.debug("fim de abrir Cartão de Crédito");
@@ -188,6 +188,7 @@ public class CartoesDeCreditoActivity extends PageBase {
 	}
 	public void CampoTextoExclusaoCartao(String confirmar)throws Exception{
 		logger.debug("início de Campo Texto Exclusão do Cartão");
+		campoTextoConfirmar.sendKeys(confirmar);
 		campoTextoConfirmar.click();
 		logger.debug("fim de confirmar Exclusão do Cartão");
 

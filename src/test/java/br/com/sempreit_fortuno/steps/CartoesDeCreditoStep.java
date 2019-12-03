@@ -52,7 +52,7 @@ public class CartoesDeCreditoStep {
 	
 	@Dado("que o usuário adicione uma nova despesa no cartão")
 	public void queOUsuarioAdicioneUmaNovaDespesaNoCartao() throws Exception{
-		cartoes.abrirCartaoDeCredito();
+		cartoes.abrirCartao();
 		cartoes.abrirMenuDeOpcoes();
 	    cartoes.abrirMenuNovaDespesaCartão();
 	    utils.inserirValorCalculadoraFortuno(getDt_().getStringOf("in_Valor_Calculadora_Transferencia"));
@@ -79,7 +79,7 @@ public class CartoesDeCreditoStep {
 
 	@Dado("que o usuário adicione um novo crédito ou estorno")
 	public void queOUsuarioAdicioneUmNovoCreditoOuEstorno() throws Exception {
-		cartoes.abrirCartaoDeCredito();
+		cartoes.abrirCartao();
 		cartoes.abrirMenuDeOpcoes();
 	    cartoes.abrirNovoCreditoOuEstorno();
 	    utils.inserirValorCalculadoraFortuno(getDt_().getStringOf("in_Valor_Calculadora_Transferencia"));
@@ -97,7 +97,7 @@ public class CartoesDeCreditoStep {
 
 	@Dado("que o usuário acesse a opção editar cartão")
 	public void queOUsuarioAcesseAOpcaoEditarCartão() throws Exception {
-	    cartoes.abrirCartaoDeCredito();
+	    cartoes.abrirCartao();
 	    cartoes.abrirMenuDeOpcoes();
 	    cartoes.abrirEditarCartao();
 	   
@@ -122,7 +122,7 @@ public class CartoesDeCreditoStep {
 
 	@Dado("que o usuário tenha uma despesa cadastrada")
 	public void queOUsuarioTenhaUmaDespesaCadastrada()throws Exception {
-		cartoes.abrirCartaoDeCredito();
+		cartoes.abrirCartao();
 	    cartoes.validarValorDaFatura();
 	}
 
@@ -140,16 +140,15 @@ public class CartoesDeCreditoStep {
 
 	@Dado("que o usuário tenha um cartão de crédito cadastrado")
 	public void queOUsuarioTenhaUmCartaoDeCreditoCadastrado() throws Exception {
-		cartoes.abrirCartaoDeCredito();
-	    cartoes.abrirMenuDeOpcoes();
-	    cartoes.abrirEditarCartao();
+		
+	    //cartoes.abrirEditarCartao();
 	}
 
 	@E("escolha remover o cartão")
 	public void escolhaRemoverOCartao() throws Exception{
 		cartoes.realizarExclusaoCartao();
-		//cartoes.CampoTextoExclusaoCartao(getDt_().getStringOf("in_Confirmar_Exclusao"));
-		//cartoes.confirmarExclusaoCartao();
+		cartoes.CampoTextoExclusaoCartao(getDt_().getStringOf("in_Confirmar_Exclusao"));
+		cartoes.confirmarExclusaoCartao();
 	}
 
 	@Então("deverá ser validado a exclusão do cartão")
